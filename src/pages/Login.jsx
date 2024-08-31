@@ -72,7 +72,7 @@ const Login = () => {
       <div className="flex flex-col sm:flex-row justify-between bg-[#F5F5F5] items-center w-full dark:bg-slate-800">
         <div className="flex h-[60px] sm:h-[80px] sm:min-h-screen w-full sm:w-[75%] bg-[#605BFF] clipped">
           <Logo></Logo>
-          <div className=" flex justify-center items-center ml-[15%]">
+          <div className=" flex justify-center items-center ml-[15%] dark:text-white">
             <h1 className=" text-white font-bold text-[2rem] md:text-[3rem] lg:text-[4.5rem] clipped-opposite">
               BASE
             </h1>
@@ -97,10 +97,10 @@ const Login = () => {
         <div className="flex flex-col mt-14 w-full gap-6 justify-center items-center">
           <div className="flex flex-col justify-center gap-4">
             <div className="flex flex-col justify-between items-start px-6 gap-2">
-              <h2 className="text-[18px] sm:text-[36px] text-black font-bold sm:leading-[43.88px]">
+              <h2 className="text-[18px] sm:text-[36px] text-black font-bold sm:leading-[43.88px] dark:text-white">
                 Sign In
               </h2>
-              <p className="text-[16px] font-lato sm:leading-[19.2px] text-black">
+              <p className="text-[16px] font-lato sm:leading-[19.2px] text-black dark:text-white">
                 Sign in to your account
               </p>
             </div>
