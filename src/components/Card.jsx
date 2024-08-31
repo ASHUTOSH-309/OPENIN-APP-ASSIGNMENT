@@ -65,9 +65,9 @@ const Card = () => {
   };
 
   return (
-    <div className="flex flex-wrap w-full items-center gap-6 justify-center lg:gap-0 overflow-auto">
+    <div className="flex flex-wrap w-full items-start gap-6 justify-center lg:gap-0 overflow-auto">
       <div className="flex flex-col text-black py-5 shadow-xl border-2 border-slate-200 w-[613px] h-[367px] mt-[218px] px-6 bg-[#FFFFFF]">
-        <label htmlFor="fileInput" className="rounded flex flex-wrap w-full items-center gap-6 justify-center lg:gap-0 w-[564px] h-[258px] border border-dotted">
+        <label htmlFor="fileInput" className="rounded flex flex-wrap w-full items-center gap-6 justify-center lg:gap-0  h-[258px] border border-dotted">
           <input
             type="file"
             id="fileInput"
