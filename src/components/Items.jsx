@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import dashimg from "../assets/Category.png";
 import schedule from "../assets/Document.png";
 import setting from "../assets/Setting.png";
@@ -6,13 +6,30 @@ import invoice from "../assets/Ticket.png";
 import notification from "../assets/Notification.png";
 import calendar from "../assets/Calendar (1).png";
 import upload from "../assets/Chart.png";
+import { DarkModeSwitch } from "react-toggle-dark-mode";
 
 const Items = () => {
-  
+
   const logout = () => {
     localStorage.clear();
     window.location.href = "/";
   };
+
+  const [darkMode, setDarkMode] = useState(false)
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  }
+
+  // Update the `dark` class on the body element whenever darkMode changes
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add('dark');
+    } else {
+      document.body.classList.remove('dark');
+    }
+  }, [darkMode]);
+
   return (
     <div className="cursor-pointer flex md:gap-6 lg:pr-12 gap-2 lg:gap-10 flex-col md:mt-6 items-start">
       <div className="flex justify-between items-center gap-3">
@@ -68,6 +85,15 @@ const Items = () => {
         <p className="font-normal text-[16px] md:text-[18px] hover:font-semibold">
           Logout
         </p>
+      </div>
+
+      <div>
+        <DarkModeSwitch
+          style={{ marginBottom: '2rem' }}
+          checked={darkMode}
+          onChange={toggleDarkMode}
+          size={30}
+        /> 
       </div>
     </div>
   );

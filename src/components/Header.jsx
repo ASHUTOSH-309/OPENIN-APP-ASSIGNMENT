@@ -4,8 +4,8 @@ import userimg from "../assets/image 1.png";
 
 const Header = () => {
   return (
-    <div className="flex justify-between items-center mt-[49px] h-[32px]">
-      <h1 className="text-black font-bold text-[21px] sm:text-[24px] ">
+    <div className="flex justify-between items-center mt-[49px] h-[32px] dark:text-white dark">
+      <h1 className="text-black font-bold text-[21px] sm:text-[24px] dark:text-white ">
         Upload CSV
       </h1>
       <div className="flex justify-between items-center gap-3" style={{float:"right"}}>

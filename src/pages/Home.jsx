@@ -22,7 +22,7 @@ const Home = () => {
     return (
       <>
         <div
-          className={`relative flex flex-col w-full sm:flex-row justify-between gap-4 lg:gap-6  bg-[#F5F5F5]`}
+          className={`relative flex flex-col w-full sm:flex-row justify-between gap-4 lg:gap-6  bg-[#F5F5F5] dark:bg-slate-800 dark:text-white`}
         >
           <SideBar />
           <div className="flex flex-col w-full gap-2 md:gap-4">
