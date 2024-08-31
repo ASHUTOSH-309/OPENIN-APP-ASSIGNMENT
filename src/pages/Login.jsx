@@ -9,6 +9,7 @@ import twitter from "../assets/twitter.svg";
 import linkedin from "../assets/linkedin.svg";
 import discord from "../assets/discord.svg";
 import Logo from "../components/Logo";
+import { DarkModeSwitch } from 'react-toggle-dark-mode';
 
 const Login = () => {
   const [value, setValue] = useState("");
@@ -48,11 +49,27 @@ const Login = () => {
   }, []);
 
   console.log(authenticated);
+  const [darkMode, setDarkMode] = useState(false)
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  }
+
+  // Update the `dark` class on the body element whenever darkMode changes
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add('dark');
+    } else {
+      document.body.classList.remove('dark');
+    }
+  }, [darkMode]);
+
+
   if (authenticated && !check) {
     return <Navigate replace to="/home" />;
   } else {
     return (
-      <div className="flex flex-col sm:flex-row justify-between bg-[#F5F5F5] items-center w-full">
+      <div className="flex flex-col sm:flex-row justify-between bg-[#F5F5F5] items-center w-full dark:bg-slate-800">
         <div className="flex h-[60px] sm:h-[80px] sm:min-h-screen w-full sm:w-[75%] bg-[#605BFF] clipped">
           <Logo></Logo>
           <div className=" flex justify-center items-center ml-[15%]">
@@ -61,7 +78,15 @@ const Login = () => {
             </h1>
           </div>
           <div className="fixed flex justify-center items-center w-full h-fit bottom-0 clipped-opposite mb-12">
-            <div className="flex gap-x-6">
+            <div className="flex gap-x-6" onClick={toggleDarkMode}>
+              <DarkModeSwitch
+                style={{ marginBottom: '2rem' }}
+                checked={darkMode}
+                onChange={toggleDarkMode}
+                size={35}
+              />
+
+
               <img src={github} className="w-[34px] h-[34px]" />
               <img src={twitter} className="w-[34px] h-[34px]" />
               <img src={linkedin} className="w-[34px] h-[34px]" />
